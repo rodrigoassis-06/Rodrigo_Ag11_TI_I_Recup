@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    background-color: #f6f8fa;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    color: #1f2328;
+  }
+  .chat-box {
+    max-width: 860px;
+    margin: 0 auto;
+    background: #ffffff;
+    border: 1px solid #d0d7de;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+  }
+  .header {
+    border-bottom: 2px solid #0969da;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+  }
+  .header h2 {
+    margin: 0;
+    color: #0969da;
+    font-size: 1.25rem;
+  }
+  .header span {
+    font-size: 0.85rem;
+    color: #656d76;
+  }
+  .message {
+    margin-bottom: 18px;
+    padding: 14px 18px;
+    border-radius: 8px;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+  .user {
+    background-color: #ddf4ff;
+    border-left: 4px solid #0969da;
+    margin-left: 30px;
+  }
+  .ai {
+    background-color: #f6f8fa;
+    border-left: 4px solid #1a7f37;
+    margin-right: 30px;
+  }
+  .sender {
+    font-weight: bold;
+    margin-bottom: 4px;
+    font-size: 0.85rem;
+  }
+  .sender-user { color: #0969da; }
+  .sender-ai { color: #1a7f37; }
+</style>
+</head>
+<body>
+
+<div class="chat-box">
+  <div class="header">
+    <h2>Registro de Interação com Inteligência Artificial</h2>
+    <span>Etapa 2: Refinamento e Validação da Modelagem UML (Agenda 11 - TI I)</span>
+  </div>
+
+  <div class="message user">
+    <div class="sender sender-user">Rodrigo Assis (Aluno):</div>
+    Olá! Estou modelando o Sistema de Matrícula Online da ETEC. No meu rascunho inicial identifiquei como atores: Aluno, Professor, Secretaria Acadêmica e o Sistema Externo de Pagamentos. O Sistema de Pagamentos entra como ator ou como caso de uso? E vale a pena generalizar Aluno e Professor como "Usuário"?
+  </div>
+
+  <div class="message ai">
+    <div class="sender sender-ai">Assistente IA:</div>
+    Excelente início, Rodrigo! Suas escolhas estão tecnicamente alinhadas com as diretrizes da UML:<br><br>
+    <strong>1. Sistema Externo de Pagamentos:</strong> Deve ser modelado como um <strong>Ator Secundário (ou Ator Sistema)</strong>, posicionado fora do limite do sistema. Ele interage com o caso de uso <em>"Processar Taxas"</em> (que por sua vez é acionado via relacionamento <code>&lt;&lt;include&gt;&gt;</code> a partir de <em>"Realizar Matrícula"</em>).<br><br>
+    <strong>2. Generalização (Usuário/Pessoa):</strong> Embora seja teoricamente válido conceber "Usuário do Sistema", para este escopo específico não é obrigatório nem recomendável criar essa generalização no diagrama de casos de uso, pois Aluno, Professor e Secretaria possuem conjuntos de casos de uso completamente distintos e regras de acesso independentes.
+  </div>
+
+  <div class="message user">
+    <div class="sender sender-user">Rodrigo Assis (Aluno):</div>
+    Perfeito! E sobre os casos de uso do Professor: devo juntar "Registrar Notas" e "Registrar Frequência" em um único caso de uso chamado "Gerenciar Diário de Classe", ou manter como dois casos de uso?
+  </div>
+
+  <div class="message ai">
+    <div class="sender sender-ai">Assistente IA:</div>
+    O enunciado da atividade destaca expressamente: <em>"registrar notas e frequência"</em>. A prática recomendada na UML para sistemas acadêmicos é manter <strong>"Registrar Notas e Frequência"</strong> como uma funcionalidade direta do Professor, ou detalhá-los individualmente. Ambas abordagens são aceitas, mas manter explícito no diagrama <em>"Registrar Notas e Frequência"</em> garante conformidade direta com os critérios de correção do professor-tutor.
+  </div>
+</div>
+
+</body>
+</html>
